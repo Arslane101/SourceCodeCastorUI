@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+    </style>
+</head>
+
+    <!-- Splash Screen -->
+    <section id="splash-screen" class="h-[100vh] bg-castor-brown flex flex-col items-center justify-center px-6">
+        <div class="text-center">
+            <div class="mb-6">
+                <img class="w-40 h-40 mx-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7e4aebcb79-ad599e98d8f3fe195631.png" alt="stylized beaver silhouette logo with shield or dam structure, minimal design, Canadian style, brown and red colors" />
+            </div>
+            <h1 class="text-4xl text-clean-white font-montserrat font-extrabold uppercase tracking-wider mb-2">CASTOR GUIDE</h1>
+            <p class="text-clean-white font-opensans">Empowering Ethical Canadian Consumption</p>
+            <div class="mt-16">
+                <div class="w-12 h-12 border-t-4 border-r-4 border-maple-red rounded-full animate-spin mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding Carousel -->
+    <section id="onboarding-carousel" class="h-[100vh] bg-clean-white hidden">
+        <div id="carousel-container" class="h-full relative">
+            <!-- Slide 1: Mission -->
+            <div id="slide-mission" class="h-full flex flex-col px-6 py-10">
+                <div class="flex-1 flex flex-col items-center justify-center text-center">
+                    <img class="w-64 h-64 mb-8" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fc361e7479-eaed9b14b07ea7c1e079.png" alt="Canadian consumer scanning product barcode with phone, maple leaf icon, ethical shopping concept, illustration style" />
+                    <h2 class="text-3xl font-montserrat font-extrabold uppercase text-castor-brown mb-4">OUR MISSION</h2>
+                    <p class="text-lg mb-6">Helping Canadians make informed choices that support local businesses and ethical practices.</p>
+                    <p class="heritage-text text-2xl text-forest-green">For our community</p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <Button variant="ghost" class="text-castor-brown">Skip</Button>
+                    <div class="flex space-x-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-maple-red"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                    </div>
+                    <Button variant="ghost" class="text-castor-brown">Next</Button>
+                </div>
+            </div>
+
+            <!-- Slide 2: How it works -->
+            <div id="slide-how-it-works" class="h-full flex flex-col px-6 py-10 hidden">
+                <div class="flex-1 flex flex-col items-center justify-center text-center">
+                    <img class="w-64 h-64 mb-8" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d194e1bae4-ae648dbca219cf00c532.png" alt="phone scanning product barcode, data visualization showing Canadian origin and ethical rating, modern illustration style" />
+                    <h2 class="text-3xl font-montserrat font-extrabold uppercase text-castor-brown mb-4">HOW IT WORKS</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-shield-blue text-clean-white rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">1</div>
+                            <p class="text-left">Scan product barcodes while shopping</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-shield-blue text-clean-white rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">2</div>
+                            <p class="text-left">Get instant information on origin, sustainability, and ethical practices</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-shield-blue text-clean-white rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">3</div>
+                            <p class="text-left">Compare alternatives and make informed decisions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <Button variant="ghost" class="text-castor-brown">Skip</Button>
+                    <div class="flex space-x-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-maple-red"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                    </div>
+                    <Button variant="ghost" class="text-castor-brown">Next</Button>
+                </div>
+            </div>
+
+            <!-- Slide 3: Privacy -->
+            <div id="slide-privacy" class="h-full flex flex-col px-6 py-10 hidden">
+                <div class="flex-1 flex flex-col items-center justify-center text-center">
+                    <img class="w-64 h-64 mb-8" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9e0c23689e-203df4e3ca357758d6bf.png" alt="privacy shield with Canadian maple leaf, data protection concept, lock icon, secure data illustration" />
+                    <h2 class="text-3xl font-montserrat font-extrabold uppercase text-castor-brown mb-4">YOUR PRIVACY</h2>
+                    <p class="text-lg mb-6">We respect your data and privacy. Your shopping habits are never sold or shared with third parties.</p>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="text-sm text-gray-700">We only collect anonymous usage data to improve our product database and recommendations.</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                    <Button variant="ghost" class="text-castor-brown">Back</Button>
+                    <div class="flex space-x-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-gray-300"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-maple-red"></div>
+                    </div>
+                    <Button variant="ghost" class="text-castor-brown">Next</Button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Screen -->
+    <section id="auth-screen" class="min-h-[100vh] bg-clean-white px-6 py-10 hidden">
+        <div class="flex flex-col h-full">
+            <div class="mb-10 text-center">
+                <img class="w-24 h-24 mx-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7e4aebcb79-4f877272e1a0d47d4663.png" alt="stylized beaver silhouette logo with shield or dam structure, minimal design, Canadian style, brown and red colors" />
+                <h1 class="text-3xl font-montserrat font-extrabold uppercase text-castor-brown mt-4">CASTOR GUIDE</h1>
+            </div>
+            
+            <div class="flex-1">
+                <div id="auth-tabs" class="flex border-b border-gray-200 mb-8">
+                    <button id="login-tab" class="flex-1 py-3 font-semibold text-castor-brown border-b-2 border-maple-red">Log In</button>
+                    <button id="signup-tab" class="flex-1 py-3 font-semibold text-gray-500">Sign Up</button>
+                </div>
+                
+                <!-- Login Form -->
+                <div id="login-form">
+                    <div class="space-y-4 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+                            <TextInput id="email" type="email" placeholder="your@email.com" required className="w-full border-gray-300 rounded-md" />
+                        </div>
+                        <div>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                            <TextInput id="password" type="password" placeholder="••••••••" required className="w-full border-gray-300 rounded-md" />
+                        </div>
+                        <div class="flex justify-end">
+                            <a href="#" class="text-sm text-shield-blue hover:underline">Forgot password?</a>
+                        </div>
+                    </div>
+                    
+                    <Button variant="primary" className="w-full bg-castor-brown hover:bg-castor-brown/90 text-white py-3 rounded-md font-semibold">Log In</Button>
+                    
+                    <div class="mt-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 grid grid-cols-2 gap-3">
+                            <Button variant="outline" className="w-full py-2.5 border border-gray-300 rounded-md font-medium">
+                                <i class="fa-brands fa-google mr-2"></i> Google
+                            </Button>
+                            <Button variant="outline" className="w-full py-2.5 border border-gray-300 rounded-md font-medium">
+                                <i class="fa-brands fa-apple mr-2"></i> Apple
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sign Up Form (Hidden by default) -->
+                <div id="signup-form" class="hidden">
+                    <!-- Sign up form fields would go here -->
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <Button variant="ghost" className="w-full py-3 text-castor-brown font-semibold">Continue as Guest</Button>
+                <p class="mt-4 text-xs text-center text-gray-500">By continuing, you agree to our <a href="#" class="text-shield-blue">Terms of Service</a> and <a href="#" class="text-shield-blue">Privacy Policy</a></p>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+    </style>
+</head>
+
+    <!-- Header -->
+    <header id="header" class="bg-castor-brown text-clean-white py-4 px-6">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <button class="mr-3">
+                    <i class="fa-solid fa-arrow-left text-xl"></i>
+                </button>
+                <h1 class="text-xl font-montserrat font-extrabold uppercase">SCAN PRODUCT</h1>
+            </div>
+            <button>
+                <i class="fa-solid fa-question-circle text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="scan-input-choice" class="px-6 py-8">
+        <section id="scan-info" class="mb-8 text-center">
+            <h2 class="text-2xl font-montserrat font-extrabold uppercase text-castor-brown mb-4">CHOOSE INPUT METHOD</h2>
+            <p class="text-gray-700">Add one or multiple images to analyze the product</p>
+        </section>
+
+        <section id="input-options" class="space-y-6">
+            <!-- Take Photo Option -->
+            <div id="take-photo-card" class="bg-clean-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-montserrat font-bold text-castor-brown">TAKE PHOTO</h3>
+                        <div class="w-12 h-12 bg-maple-red rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-camera text-clean-white text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Use your camera to take photos of the product label, barcode, or packaging</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Barcode</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Ingredients</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Packaging</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 py-4 px-6">
+                    <button class="w-full bg-castor-brown hover:bg-castor-brown/90 text-clean-white py-3 rounded-md font-semibold uppercase flex items-center justify-center">
+                        <i class="fa-solid fa-camera mr-2"></i>
+                        Open Camera
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upload Image Option -->
+            <div id="upload-image-card" class="bg-clean-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-montserrat font-bold text-castor-brown">UPLOAD IMAGES</h3>
+                        <div class="w-12 h-12 bg-shield-blue rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-upload text-clean-white text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">Select existing photos from your gallery to analyze</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Multiple images</span>
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">From gallery</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 py-4 px-6">
+                    <label for="dropzone-file" class="w-full block">
+                        <div class="w-full bg-castor-brown hover:bg-castor-brown/90 text-clean-white py-3 rounded-md font-semibold uppercase flex items-center justify-center cursor-pointer">
+                            <i class="fa-solid fa-folder-open mr-2"></i>
+                            Browse Gallery
+                        </div>
+                        <input id="dropzone-file" type="file" class="hidden" multiple />
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section id="scan-tips" class="mt-10">
+            <div class="bg-gray-100 rounded-lg p-5">
+                <h4 class="text-lg font-montserrat font-bold text-castor-brown mb-3 flex items-center">
+                    <i class="fa-solid fa-lightbulb text-maple-red mr-2"></i>
+                    SCANNING TIPS
+                </h4>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-forest-green mt-1 mr-2"></i>
+                        <span>Ensure good lighting for clear images</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-forest-green mt-1 mr-2"></i>
+                        <span>Capture the entire barcode in one image</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-check text-forest-green mt-1 mr-2"></i>
+                        <span>Include ingredient lists and country of origin labels</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <div id="bottom-nav" class="fixed bottom-0 left-0 right-0">
+        <nav class="bg-clean-white border-t border-gray-200">
+            <div class="flex justify-around">
+                <button class="flex flex-col items-center py-3 px-5 text-castor-brown">
+                    <i class="fa-solid fa-home text-xl"></i>
+                    <span class="text-xs mt-1">Home</span>
+                </button>
+                <button class="flex flex-col items-center py-3 px-5 text-maple-red">
+                    <i class="fa-solid fa-barcode text-xl"></i>
+                    <span class="text-xs mt-1">Scan</span>
+                </button>
+                <button class="flex flex-col items-center py-3 px-5 text-gray-500">
+                    <i class="fa-solid fa-history text-xl"></i>
+                    <span class="text-xs mt-1">History</span>
+                </button>
+                <button class="flex flex-col items-center py-3 px-5 text-gray-500">
+                    <i class="fa-solid fa-user text-xl"></i>
+                    <span class="text-xs mt-1">Profile</span>
+                </button>
+            </div>
+        </nav>
+    </div>

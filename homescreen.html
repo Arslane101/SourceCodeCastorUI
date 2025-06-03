@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+    </style>
+</head>
+
+    <!-- Home Screen -->
+    <main id="home-screen" class="min-h-[100vh] bg-gray-50 pb-20">
+        <!-- Header -->
+        <header id="header" class="bg-castor-brown px-4 py-5">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img class="w-10 h-10" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7e4aebcb79-4f877272e1a0d47d4663.png" alt="Castor Guide logo" />
+                    <h1 class="text-xl font-montserrat font-extrabold uppercase tracking-wider text-clean-white ml-2">CASTOR GUIDE</h1>
+                </div>
+                <button class="text-clean-white">
+                    <i class="fa-regular fa-bell text-xl"></i>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Search Bar -->
+        <section id="search-section" class="px-4 py-4 bg-white shadow-sm">
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-search text-gray-400"></i>
+                </div>
+                <input type="text" class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg bg-gray-50 text-sm focus:ring-shield-blue focus:border-shield-blue" placeholder="Search products or brands..." />
+            </div>
+        </section>
+        
+        <!-- Scan CTA -->
+        <section id="scan-cta" class="px-4 py-6">
+            <div class="bg-gradient-to-r from-castor-brown to-castor-brown/90 rounded-xl p-5 text-clean-white flex items-center justify-between shadow-md">
+                <div class="flex-1">
+                    <h2 class="text-xl font-montserrat font-extrabold uppercase mb-1">SCAN PRODUCT</h2>
+                    <p class="text-sm opacity-90">Discover ethical & local alternatives</p>
+                </div>
+                <div class="bg-maple-red rounded-full p-3 ml-4">
+                    <i class="fa-solid fa-barcode text-2xl"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Recent Scans -->
+        <section id="recent-scans" class="px-4 py-3">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-montserrat font-bold text-castor-brown">RECENT SCANS</h2>
+                <a href="#" class="text-shield-blue text-sm font-semibold">View All</a>
+            </div>
+            
+            <!-- Scan Cards -->
+            <div id="scan-cards" class="space-y-4">
+                <!-- Scan Card 1 -->
+                <div id="scan-card-1" class="bg-white rounded-lg shadow-sm p-4 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <div class="w-16 h-16 rounded-md overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/4b14681f83-9a08f5c700f32741c3fa.png" alt="packaged cereal box product photo, canadian breakfast food, clean modern packaging" />
+                        </div>
+                        <div class="ml-3 flex-1">
+                            <h3 class="font-montserrat font-bold text-castor-brown">Morning Harvest Cereal</h3>
+                            <p class="text-sm text-gray-600">Scanned on May 27, 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-forest-green/10 text-forest-green text-xs font-semibold px-2 py-1 rounded-full">
+                            <i class="fa-solid fa-leaf mr-1"></i> Local Product
+                        </div>
+                        <div class="bg-shield-blue/10 text-shield-blue text-xs font-semibold px-2 py-1 rounded-full">
+                            <i class="fa-solid fa-check-circle mr-1"></i> Ethical
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scan Card 2 -->
+                <div id="scan-card-2" class="bg-white rounded-lg shadow-sm p-4 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <div class="w-16 h-16 rounded-md overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/64fddb8af5-08c008a156fb99dd5c71.png" alt="bottle of maple syrup, premium canadian product, glass container" />
+                        </div>
+                        <div class="ml-3 flex-1">
+                            <h3 class="font-montserrat font-bold text-castor-brown">Pure Maple Syrup</h3>
+                            <p class="text-sm text-gray-600">Scanned on May 25, 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-forest-green/10 text-forest-green text-xs font-semibold px-2 py-1 rounded-full">
+                            <i class="fa-solid fa-leaf mr-1"></i> Local Product
+                        </div>
+                        <div class="bg-shield-blue/10 text-shield-blue text-xs font-semibold px-2 py-1 rounded-full">
+                            <i class="fa-solid fa-check-circle mr-1"></i> Ethical
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scan Card 3 -->
+                <div id="scan-card-3" class="bg-white rounded-lg shadow-sm p-4 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <div class="w-16 h-16 rounded-md overflow-hidden flex-shrink-0">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a1e4a35c0f-575e4ec5bcdd50ad30f0.png" alt="coffee bag package, canadian coffee brand, modern minimalist design" />
+                        </div>
+                        <div class="ml-3 flex-1">
+                            <h3 class="font-montserrat font-bold text-castor-brown">Mountain Blend Coffee</h3>
+                            <p class="text-sm text-gray-600">Scanned on May 22, 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-gray-200 text-gray-700 text-xs font-semibold px-2 py-1 rounded-full">
+                            <i class="fa-solid fa-globe mr-1"></i> Imported
+                        </div>
+                        <div class="bg-maple-red/10 text-maple-red text-xs font-semibold px-2 py-1 rounded-full">
+                            <i class="fa-solid fa-info-circle mr-1"></i> Alternatives Available
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ethical Shopping Tips -->
+        <section id="shopping-tips" class="px-4 py-3 mt-2">
+            <h2 class="text-lg font-montserrat font-bold text-castor-brown mb-4">ETHICAL SHOPPING TIPS</h2>
+            <div class="bg-white rounded-lg shadow-sm p-4 border border-gray-100">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-shield-blue/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-lightbulb text-shield-blue text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-montserrat font-bold text-castor-brown text-base">Look for local alternatives</h3>
+                        <p class="text-sm text-gray-600">Products made in Canada typically have a smaller carbon footprint.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Bottom Navigation -->
+    <nav id="footer" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+        <div class="flex justify-around items-center h-16">
+            <!-- Home Button -->
+            <a href="#" class="flex flex-col items-center justify-center w-full h-full text-maple-red">
+                <i class="fa-solid fa-home text-xl"></i>
+                <span class="text-xs mt-1 font-semibold">Home</span>
+            </a>
+            
+            <!-- Scan Button (Center, Prominent) -->
+            <a href="#" class="flex flex-col items-center justify-center w-full h-full relative">
+                <div class="absolute -top-5 w-14 h-14 rounded-full bg-castor-brown flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-barcode text-clean-white text-xl"></i>
+                </div>
+                <span class="text-xs mt-8 font-semibold text-gray-600">Scan</span>
+            </a>
+            
+            <!-- Profile Button -->
+            <a href="#" class="flex flex-col items-center justify-center w-full h-full text-gray-600">
+                <i class="fa-solid fa-user text-xl"></i>
+                <span class="text-xs mt-1 font-semibold">Profile</span>
+            </a>
+        </div>
+    </nav>

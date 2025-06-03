@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+      .sortable-item {
+        touch-action: none;
+        user-select: none;
+      }
+    </style>
+</head>
+
+    
+    <header id="header" class="bg-castor-brown text-clean-white py-4 px-6">
+        <div class="flex justify-between items-center">
+            <button class="text-clean-white">
+                <i class="fa-solid fa-arrow-left text-xl"></i>
+            </button>
+            <h1 class="text-xl font-montserrat font-extrabold uppercase tracking-wide">REVIEW ITEMS</h1>
+            <div class="w-6"></div>
+        </div>
+    </header>
+
+    <main id="upload-preview-screen" class="px-6 py-6">
+        <section id="preview-instructions" class="mb-6">
+            <h2 class="text-lg font-montserrat font-bold text-castor-brown mb-2">SELECTED ITEMS</h2>
+            <p class="text-gray-600 mb-4">Drag to reorder or tap the trash icon to remove items.</p>
+        </section>
+
+        <section id="thumbnails-container" class="mb-8">
+            <div id="sortable-items" class="space-y-3">
+                <div id="item-1" class="sortable-item bg-white rounded-lg shadow-sm border border-gray-200 p-3">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 w-6 text-gray-400 cursor-grab">
+                            <i class="fa-solid fa-grip-vertical"></i>
+                        </div>
+                        <div class="flex-grow flex items-center ml-2">
+                            <div class="h-16 w-16 rounded-md overflow-hidden bg-gray-100 flex-shrink-0">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f097b64707-98ff853dd0dbbbe9d7bb.png" alt="Canadian maple syrup bottle product with ethical seal, high quality product photography" />
+                            </div>
+                            <div class="ml-3 flex-grow">
+                                <h3 class="font-montserrat font-bold text-castor-brown">Pure Maple Syrup</h3>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-leaf text-forest-green mr-1"></i>
+                                    <span class="text-sm text-gray-600">Locally Sourced</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 ml-2 p-2 text-gray-400 hover:text-maple-red">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="item-2" class="sortable-item bg-white rounded-lg shadow-sm border border-gray-200 p-3">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 w-6 text-gray-400 cursor-grab">
+                            <i class="fa-solid fa-grip-vertical"></i>
+                        </div>
+                        <div class="flex-grow flex items-center ml-2">
+                            <div class="h-16 w-16 rounded-md overflow-hidden bg-gray-100 flex-shrink-0">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/1923e64a0c-c3badb0dd1d76b90ef61.png" alt="Canadian artisanal cheese wheel with maple leaf stamp, product photography" />
+                            </div>
+                            <div class="ml-3 flex-grow">
+                                <h3 class="font-montserrat font-bold text-castor-brown">Artisan Cheese</h3>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-cow text-shield-blue mr-1"></i>
+                                    <span class="text-sm text-gray-600">Ethical Farming</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 ml-2 p-2 text-gray-400 hover:text-maple-red">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="item-3" class="sortable-item bg-white rounded-lg shadow-sm border border-gray-200 p-3">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 w-6 text-gray-400 cursor-grab">
+                            <i class="fa-solid fa-grip-vertical"></i>
+                        </div>
+                        <div class="flex-grow flex items-center ml-2">
+                            <div class="h-16 w-16 rounded-md overflow-hidden bg-gray-100 flex-shrink-0">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/862c7e17b0-c9075098d16479443474.png" alt="Canadian craft beer bottle with sustainability label, product photography" />
+                            </div>
+                            <div class="ml-3 flex-grow">
+                                <h3 class="font-montserrat font-bold text-castor-brown">Craft Beer</h3>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-recycle text-forest-green mr-1"></i>
+                                    <span class="text-sm text-gray-600">Sustainable Package</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="flex-shrink-0 ml-2 p-2 text-gray-400 hover:text-maple-red">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="add-more-section" class="mb-8">
+            <button class="w-full flex items-center justify-center py-4 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:bg-gray-50">
+                <i class="fa-solid fa-plus mr-2"></i>
+                <span>Add More Items</span>
+            </button>
+        </section>
+    </main>
+
+    <div id="bottom-cta" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <span class="text-sm text-gray-500">Selected Items</span>
+                <p class="font-bold text-castor-brown">3 Products</p>
+            </div>
+            <div>
+                <span class="text-sm text-gray-500">Est. Processing Time</span>
+                <p class="font-bold text-castor-brown">~2 min</p>
+            </div>
+        </div>
+        <button class="w-full bg-maple-red hover:bg-maple-red/90 text-white py-3 rounded-md font-montserrat font-bold uppercase tracking-wide">
+            Process Items
+        </button>
+    </div>
+
+    <script>
+        // Simple drag functionality simulation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sortableItems = document.querySelectorAll('.sortable-item');
+            let draggedItem = null;
+            
+            sortableItems.forEach(item => {
+                const handle = item.querySelector('.fa-grip-vertical').parentNode;
+                
+                handle.addEventListener('mousedown', function() {
+                    draggedItem = item;
+                    item.classList.add('bg-gray-100');
+                });
+                
+                item.addEventListener('mouseup', function() {
+                    draggedItem = null;
+                    item.classList.remove('bg-gray-100');
+                });
+                
+                const deleteBtn = item.querySelector('.fa-trash-can').parentNode;
+                deleteBtn.addEventListener('click', function() {
+                    item.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                    setTimeout(() => {
+                        item.remove();
+                    }, 300);
+                });
+            });
+        });
+    </script>

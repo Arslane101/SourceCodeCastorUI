@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+    </style>
+</head>
+
+    <!-- Header -->
+    <header id="header" class="bg-castor-brown text-clean-white p-4 sticky top-0 z-50">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <button id="back-button" class="p-1">
+                    <i class="fa-solid fa-arrow-left text-xl"></i>
+                </button>
+                <h1 class="text-xl font-montserrat font-extrabold uppercase">SAVED PRODUCTS</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="search-button" class="p-1">
+                    <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                </button>
+                <button id="filter-button" class="p-1">
+                    <i class="fa-solid fa-filter text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="saved-products-content" class="pb-20">
+        <!-- Action Bar -->
+        <section id="action-bar" class="bg-white p-4 border-b border-gray-200 sticky top-16 z-40">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <span class="font-semibold">12 saved items</span>
+                </div>
+                <div class="flex space-x-2">
+                    <button id="select-all-button" class="text-shield-blue flex items-center">
+                        <i class="fa-regular fa-square-check mr-1"></i>
+                        <span>Select All</span>
+                    </button>
+                    <button id="edit-button" class="text-castor-brown">
+                        Edit
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section id="categories-section" class="px-4 py-3 overflow-x-auto">
+            <div class="flex space-x-2 whitespace-nowrap">
+                <button class="px-4 py-2 bg-castor-brown text-white rounded-full text-sm font-semibold">All</button>
+                <button class="px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-semibold">Food</button>
+                <button class="px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-semibold">Clothing</button>
+                <button class="px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-semibold">Electronics</button>
+                <button class="px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-semibold">Home</button>
+            </div>
+        </section>
+
+        <!-- Saved Products List -->
+        <section id="saved-products-list" class="px-4 py-2">
+            <div class="space-y-4">
+                <!-- Product Card 1 -->
+                <div id="product-card-1" class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="flex">
+                        <div class="w-1/3 h-32 bg-gray-200 relative">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c1c5b5bda4-1cd913c22eb7fdd0abc1.png" alt="Maple syrup bottle with Canadian flag label, product photography on white background" />
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-1 shadow-sm">
+                                    <i class="fa-solid fa-heart text-maple-red"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="w-2/3 p-3 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="bg-forest-green text-white text-xs px-2 py-0.5 rounded">LOCAL</span>
+                                        <h3 class="font-montserrat font-bold mt-1">Pure Maple Syrup</h3>
+                                    </div>
+                                    <button class="text-gray-500">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Quebec Harvest - 500ml</p>
+                            </div>
+                            <div class="flex justify-between items-end mt-2">
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-leaf text-forest-green mr-1"></i>
+                                        <span class="text-xs font-semibold">95% Ethical Score</span>
+                                    </div>
+                                    <p class="text-maple-red font-semibold mt-1">$14.99</p>
+                                </div>
+                                <button class="bg-castor-brown text-white px-3 py-1 rounded text-sm">
+                                    Compare
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div id="product-card-2" class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="flex">
+                        <div class="w-1/3 h-32 bg-gray-200 relative">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3e996df010-1c9732f27382772e5798.png" alt="Wool plaid shirt in red and black, Canadian outdoor style, product photography" />
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-1 shadow-sm">
+                                    <i class="fa-solid fa-heart text-maple-red"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="w-2/3 p-3 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="bg-shield-blue text-white text-xs px-2 py-0.5 rounded">ETHICAL</span>
+                                        <h3 class="font-montserrat font-bold mt-1">Wool Plaid Shirt</h3>
+                                    </div>
+                                    <button class="text-gray-500">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Northern Threads - Medium</p>
+                            </div>
+                            <div class="flex justify-between items-end mt-2">
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-leaf text-forest-green mr-1"></i>
+                                        <span class="text-xs font-semibold">87% Ethical Score</span>
+                                    </div>
+                                    <p class="text-maple-red font-semibold mt-1">$89.95</p>
+                                </div>
+                                <button class="bg-castor-brown text-white px-3 py-1 rounded text-sm">
+                                    Compare
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div id="product-card-3" class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="flex">
+                        <div class="w-1/3 h-32 bg-gray-200 relative">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/2b624a1c77-f4fe073d77b39b499b9b.png" alt="Organic blueberries in transparent package with Canadian farm label, fresh produce" />
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-1 shadow-sm">
+                                    <i class="fa-solid fa-heart text-maple-red"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="w-2/3 p-3 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="bg-forest-green text-white text-xs px-2 py-0.5 rounded">LOCAL</span>
+                                        <h3 class="font-montserrat font-bold mt-1">Organic Blueberries</h3>
+                                    </div>
+                                    <button class="text-gray-500">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">BC Farms - 170g</p>
+                            </div>
+                            <div class="flex justify-between items-end mt-2">
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-leaf text-forest-green mr-1"></i>
+                                        <span class="text-xs font-semibold">98% Ethical Score</span>
+                                    </div>
+                                    <p class="text-maple-red font-semibold mt-1">$4.99</p>
+                                </div>
+                                <button class="bg-castor-brown text-white px-3 py-1 rounded text-sm">
+                                    Compare
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div id="product-card-4" class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="flex">
+                        <div class="w-1/3 h-32 bg-gray-200 relative">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/506d0e86ac-ba6980891c7f504bc9c4.png" alt="Handcrafted wooden cutting board with maple leaf engraving, Canadian artisan product" />
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-1 shadow-sm">
+                                    <i class="fa-solid fa-heart text-maple-red"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="w-2/3 p-3 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="bg-shield-blue text-white text-xs px-2 py-0.5 rounded">ETHICAL</span>
+                                        <h3 class="font-montserrat font-bold mt-1">Maple Cutting Board</h3>
+                                    </div>
+                                    <button class="text-gray-500">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-1">Artisan Woodworks - Medium</p>
+                            </div>
+                            <div class="flex justify-between items-end mt-2">
+                                <div>
+                                    <div class="flex items-center">
+                                        <i class="fa-solid fa-leaf text-forest-green mr-1"></i>
+                                        <span class="text-xs font-semibold">92% Ethical Score</span>
+                                    </div>
+                                    <p class="text-maple-red font-semibold mt-1">$42.50</p>
+                                </div>
+                                <button class="bg-castor-brown text-white px-3 py-1 rounded text-sm">
+                                    Compare
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Empty State (Hidden by default) -->
+        <section id="empty-state" class="px-4 py-8 flex flex-col items-center justify-center hidden">
+            <div class="text-center">
+                <div class="w-32 h-32 mx-auto mb-6">
+                    <img class="w-full h-full object-contain" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b8bfb30165-52cd96a394e0513eea45.png" alt="Empty favorites illustration with heart and maple leaf, Canadian style, minimalist design" />
+                </div>
+                <h2 class="font-montserrat font-extrabold text-xl text-castor-brown mb-2">NO SAVED PRODUCTS YET</h2>
+                <p class="text-gray-600 mb-6">Save products to compare later or keep track of your ethical finds.</p>
+                <button class="bg-castor-brown text-white px-6 py-3 rounded-md font-semibold">
+                    Start Shopping
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Multi-select Action Bar (Hidden by default) -->
+    <div id="multi-select-action-bar" class="fixed bottom-16 left-0 right-0 bg-white border-t border-gray-200 p-4 hidden">
+        <div class="flex justify-between items-center">
+            <span class="font-semibold">3 selected</span>
+            <div class="flex space-x-3">
+                <button class="px-4 py-2 border border-gray-300 rounded-md text-castor-brown font-semibold">
+                    <i class="fa-solid fa-folder-open mr-1"></i> Lists
+                </button>
+                <button class="px-4 py-2 border border-gray-300 rounded-md text-maple-red font-semibold">
+                    <i class="fa-solid fa-trash mr-1"></i> Remove
+                </button>
+                <button class="px-4 py-2 bg-castor-brown text-white rounded-md font-semibold">
+                    Compare
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav id="footer" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
+        <div class="flex justify-around">
+            <a href="#" class="flex flex-col items-center py-2 px-4">
+                <i class="fa-solid fa-house text-gray-500 text-xl"></i>
+                <span class="text-xs mt-1 text-gray-500">Home</span>
+            </a>
+            <a href="#" class="flex flex-col items-center py-2 px-4">
+                <i class="fa-solid fa-barcode text-gray-500 text-xl"></i>
+                <span class="text-xs mt-1 text-gray-500">Scan</span>
+            </a>
+            <a href="#" class="flex flex-col items-center py-2 px-4">
+                <i class="fa-solid fa-heart text-maple-red text-xl"></i>
+                <span class="text-xs mt-1 font-semibold text-maple-red">Saved</span>
+            </a>
+            <a href="#" class="flex flex-col items-center py-2 px-4">
+                <i class="fa-solid fa-user text-gray-500 text-xl"></i>
+                <span class="text-xs mt-1 text-gray-500">Profile</span>
+            </a>
+        </div>
+    </nav>

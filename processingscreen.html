@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+      @keyframes pulse-opacity {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      .animate-pulse-opacity {
+        animation: pulse-opacity 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+    </style>
+</head>
+
+    <section id="processing-screen" class="h-[100vh] bg-clean-white flex flex-col px-6 py-8">
+        <header id="header" class="flex items-center justify-between mb-8">
+            <div class="flex items-center">
+                <img class="w-10 h-10" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7e4aebcb79-4f877272e1a0d47d4663.png" alt="Castor Guide logo" />
+                <h1 class="text-xl font-montserrat font-extrabold uppercase text-castor-brown ml-2">CASTOR GUIDE</h1>
+            </div>
+            <button id="close-btn" class="text-castor-brown">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </header>
+        
+        <div id="processing-status" class="mb-6 text-center">
+            <h2 class="text-2xl font-montserrat font-extrabold text-castor-brown mb-2">ANALYZING 3 PRODUCT(S)...</h2>
+            <p class="text-gray-600">We're checking origin, sustainability, and ethical practices</p>
+        </div>
+        
+        <div id="processing-animation" class="mb-8 flex justify-center">
+            <img class="w-48 h-48" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/80d885bfb2-56d946954894131d1262.png" alt="stylized beaver character analyzing products with magnifying glass, Canadian style illustration, maple leaf elements, simple flat design" />
+        </div>
+        
+        <div id="products-list" class="flex-1 space-y-5 overflow-y-auto">
+            <div id="product-item-1" class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center">
+                        <div class="bg-castor-brown w-10 h-10 rounded-lg flex items-center justify-center text-clean-white mr-3">
+                            <i class="fa-solid fa-bottle-water text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-montserrat font-bold text-castor-brown">Maple Water</h3>
+                            <p class="text-sm text-gray-600">Natural beverage</p>
+                        </div>
+                    </div>
+                    <div class="text-maple-red animate-pulse-opacity">
+                        <i class="fa-solid fa-circle-notch fa-spin text-xl"></i>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-maple-red h-2 rounded-full" style="width: 75%"></div>
+                </div>
+            </div>
+            
+            <div id="product-item-2" class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center">
+                        <div class="bg-castor-brown w-10 h-10 rounded-lg flex items-center justify-center text-clean-white mr-3">
+                            <i class="fa-solid fa-cookie-bite text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-montserrat font-bold text-castor-brown">Maple Cookies</h3>
+                            <p class="text-sm text-gray-600">Confectionery</p>
+                        </div>
+                    </div>
+                    <div class="text-maple-red animate-pulse-opacity">
+                        <i class="fa-solid fa-circle-notch fa-spin text-xl"></i>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-maple-red h-2 rounded-full" style="width: 45%"></div>
+                </div>
+            </div>
+            
+            <div id="product-item-3" class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center">
+                        <div class="bg-castor-brown w-10 h-10 rounded-lg flex items-center justify-center text-clean-white mr-3">
+                            <i class="fa-solid fa-shirt text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-montserrat font-bold text-castor-brown">Wool Sweater</h3>
+                            <p class="text-sm text-gray-600">Apparel</p>
+                        </div>
+                    </div>
+                    <div class="text-maple-red animate-pulse-opacity">
+                        <i class="fa-solid fa-circle-notch fa-spin text-xl"></i>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-maple-red h-2 rounded-full" style="width: 25%"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="info-message" class="mt-6 bg-gray-100 p-4 rounded-lg text-center">
+            <p class="text-sm text-gray-700">
+                <i class="fa-solid fa-info-circle text-shield-blue mr-2"></i>
+                This might take a moment. We're checking multiple databases to provide accurate information.
+            </p>
+        </div>
+        
+        <div id="cancel-action" class="mt-6 text-center">
+            <button class="text-castor-brown font-semibold">
+                Cancel Analysis
+            </button>
+        </div>
+    </section>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+    </style>
+</head>
+
+    <!-- Header -->
+    <header id="header" class="bg-castor-brown text-clean-white p-4 sticky top-0 z-10">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <button class="mr-3">
+                    <i class="fa-solid fa-arrow-left text-xl"></i>
+                </button>
+                <h1 class="text-xl font-montserrat font-extrabold uppercase">PRODUCT SCORE</h1>
+            </div>
+            <button>
+                <i class="fa-solid fa-share-nodes text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="product-scoring-screen" class="pb-20">
+        <!-- Product Header -->
+        <section id="product-header" class="bg-white p-4 mb-4 shadow-sm">
+            <div class="flex items-center">
+                <div class="w-16 h-16 bg-gray-200 rounded-lg overflow-hidden mr-4">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0f4cf3efa4-6003bda2faf4263695c9.png" alt="maple syrup bottle product image, professional product photography on white background" />
+                </div>
+                <div>
+                    <h2 class="font-montserrat font-bold text-lg">Pure Canadian Maple Syrup</h2>
+                    <p class="text-gray-600 text-sm">Quebec Maple Co.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Castor Score Card -->
+        <section id="castor-score-card" class="bg-white rounded-lg mx-4 mb-4 shadow-sm overflow-hidden">
+            <div class="p-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-montserrat font-bold text-lg uppercase text-castor-brown">CASTOR SCORE</h3>
+                    <div class="flex items-center">
+                        <span class="text-2xl font-bold mr-1 text-forest-green">87</span>
+                        <span class="text-sm text-gray-500">/100</span>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-forest-green h-2.5 rounded-full" style="width: 87%"></div>
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>Poor</span>
+                    <span>Excellent</span>
+                </div>
+            </div>
+
+            <div class="p-4">
+                <p class="text-sm mb-3">This product scores highly on local production and ethical labor practices.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-forest-green/10 text-forest-green text-xs font-semibold px-2.5 py-1 rounded-full">Canadian Made</span>
+                    <span class="bg-shield-blue/10 text-shield-blue text-xs font-semibold px-2.5 py-1 rounded-full">Ethical Labor</span>
+                    <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded-full">Sustainable</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Score Breakdown -->
+        <section id="score-breakdown" class="bg-white rounded-lg mx-4 mb-4 shadow-sm">
+            <div class="p-4 border-b border-gray-100">
+                <h3 class="font-montserrat font-bold text-lg uppercase text-castor-brown">SCORE BREAKDOWN</h3>
+            </div>
+            
+            <div id="breakdown-origin" class="p-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-map-pin text-maple-red mr-2"></i>
+                        <h4 class="font-semibold">Canadian Origin</h4>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-1 text-forest-green">95</span>
+                        <span class="text-xs text-gray-500">/100</span>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-forest-green h-2 rounded-full" style="width: 95%"></div>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Sourced and produced in Quebec, Canada.</p>
+            </div>
+            
+            <div id="breakdown-labor" class="p-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-users text-shield-blue mr-2"></i>
+                        <h4 class="font-semibold">Labor Practices</h4>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-1 text-forest-green">90</span>
+                        <span class="text-xs text-gray-500">/100</span>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-forest-green h-2 rounded-full" style="width: 90%"></div>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Fair wages and safe working conditions verified.</p>
+            </div>
+            
+            <div id="breakdown-sustainability" class="p-4 border-b border-gray-100">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-leaf text-forest-green mr-2"></i>
+                        <h4 class="font-semibold">Environmental Impact</h4>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-1 text-amber-600">75</span>
+                        <span class="text-xs text-gray-500">/100</span>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-amber-500 h-2 rounded-full" style="width: 75%"></div>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Sustainable harvesting practices, but packaging could improve.</p>
+            </div>
+            
+            <div id="breakdown-community" class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-handshake text-castor-brown mr-2"></i>
+                        <h4 class="font-semibold">Community Impact</h4>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-1 text-forest-green">88</span>
+                        <span class="text-xs text-gray-500">/100</span>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-forest-green h-2 rounded-full" style="width: 88%"></div>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">Supports local economies and indigenous partnerships.</p>
+            </div>
+        </section>
+        
+        <!-- Detailed Information (Expandable) -->
+        <section id="detailed-info" class="bg-white rounded-lg mx-4 mb-4 shadow-sm">
+            <div class="p-4 border-b border-gray-100">
+                <button class="w-full flex justify-between items-center" id="toggle-details">
+                    <h3 class="font-montserrat font-bold text-lg uppercase text-castor-brown">DETAILED INFORMATION</h3>
+                    <i class="fa-solid fa-chevron-down text-castor-brown"></i>
+                </button>
+            </div>
+            
+            <div id="detailed-content" class="hidden">
+                <div class="p-4 border-b border-gray-100">
+                    <h4 class="font-semibold mb-2">Company Background</h4>
+                    <p class="text-sm text-gray-600">Quebec Maple Co. is a family-owned business operating since 1976. They employ over 120 local workers and use traditional harvesting methods combined with modern production facilities.</p>
+                </div>
+                
+                <div class="p-4 border-b border-gray-100">
+                    <h4 class="font-semibold mb-2">Certifications</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-1 rounded-full flex items-center">
+                            <i class="fa-solid fa-certificate text-forest-green mr-1"></i>
+                            Organic Certified
+                        </span>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-1 rounded-full flex items-center">
+                            <i class="fa-solid fa-leaf text-forest-green mr-1"></i>
+                            Sustainable Forestry
+                        </span>
+                        <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-1 rounded-full flex items-center">
+                            <i class="fa-solid fa-check-circle text-shield-blue mr-1"></i>
+                            Fair Trade
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="p-4">
+                    <h4 class="font-semibold mb-2">Controversies</h4>
+                    <div class="flex items-start mb-2">
+                        <i class="fa-solid fa-circle-info text-amber-500 mt-1 mr-2"></i>
+                        <p class="text-sm text-gray-600">Minor controversy in 2020 regarding plastic packaging, which the company has since addressed with biodegradable alternatives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Alternative Products -->
+        <section id="alternatives" class="bg-white rounded-lg mx-4 mb-4 shadow-sm">
+            <div class="p-4 border-b border-gray-100">
+                <h3 class="font-montserrat font-bold text-lg uppercase text-castor-brown">ALTERNATIVE PRODUCTS</h3>
+            </div>
+            
+            <div class="p-4">
+                <div class="flex overflow-x-auto pb-2 gap-4">
+                    <div id="alt-product-1" class="flex-shrink-0 w-40 border border-gray-200 rounded-lg overflow-hidden">
+                        <div class="h-32 bg-gray-100">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/39165f2ffb-da3472e93125aa63f1b4.png" alt="organic maple syrup bottle product image, professional product photography" />
+                        </div>
+                        <div class="p-2">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-xs font-semibold">Wild Maple</span>
+                                <span class="bg-forest-green text-white text-xs font-bold px-1.5 py-0.5 rounded">92</span>
+                            </div>
+                            <p class="text-xs text-gray-500 truncate">Organic Maple Syrup</p>
+                        </div>
+                    </div>
+                    
+                    <div id="alt-product-2" class="flex-shrink-0 w-40 border border-gray-200 rounded-lg overflow-hidden">
+                        <div class="h-32 bg-gray-100">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/511412d22b-fc5059006c4e98d4023f.png" alt="maple syrup glass bottle with wooden cap, professional product photography" />
+                        </div>
+                        <div class="p-2">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-xs font-semibold">Heritage Sap</span>
+                                <span class="bg-amber-500 text-white text-xs font-bold px-1.5 py-0.5 rounded">78</span>
+                            </div>
+                            <p class="text-xs text-gray-500 truncate">Dark Maple Syrup</p>
+                        </div>
+                    </div>
+                    
+                    <div id="alt-product-3" class="flex-shrink-0 w-40 border border-gray-200 rounded-lg overflow-hidden">
+                        <div class="h-32 bg-gray-100">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ae3e08333e-4a14165fe204b3d066d8.png" alt="small maple syrup jug with maple leaf design, professional product photography" />
+                        </div>
+                        <div class="p-2">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-xs font-semibold">Maple Grove</span>
+                                <span class="bg-forest-green text-white text-xs font-bold px-1.5 py-0.5 rounded">85</span>
+                            </div>
+                            <p class="text-xs text-gray-500 truncate">Pure Canadian Syrup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav id="footer" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+        <div class="flex justify-around">
+            <button class="flex flex-col items-center py-2 px-4">
+                <i class="fa-solid fa-house text-gray-500 text-xl"></i>
+                <span class="text-xs mt-1 text-gray-500">Home</span>
+            </button>
+            <button class="flex flex-col items-center py-2 px-4">
+                <i class="fa-solid fa-barcode text-gray-500 text-xl"></i>
+                <span class="text-xs mt-1 text-gray-500">Scan</span>
+            </button>
+            <button class="flex flex-col items-center py-2 px-4">
+                <i class="fa-solid fa-chart-simple text-maple-red text-xl"></i>
+                <span class="text-xs mt-1 text-maple-red">Scores</span>
+            </button>
+            <button class="flex flex-col items-center py-2 px-4">
+                <i class="fa-solid fa-user text-gray-500 text-xl"></i>
+                <span class="text-xs mt-1 text-gray-500">Profile</span>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById('toggle-details').addEventListener('click', function() {
+            const detailedContent = document.getElementById('detailed-content');
+            const icon = this.querySelector('i');
+            
+            if (detailedContent.classList.contains('hidden')) {
+                detailedContent.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                detailedContent.classList.add('hidden');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        });
+    </script>

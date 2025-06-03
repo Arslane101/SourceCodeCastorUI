@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+    </style>
+</head>
+
+    <!-- Header -->
+    <header id="header" class="bg-castor-brown text-clean-white py-4 px-4 sticky top-0 z-10">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <button class="mr-3">
+                    <i class="fa-solid fa-arrow-left text-xl"></i>
+                </button>
+                <h1 class="font-montserrat font-extrabold text-xl uppercase">Edit Products</h1>
+            </div>
+            <div>
+                <button class="text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="product-edit-screen" class="pb-24">
+        <!-- Introduction Section -->
+        <section id="intro-section" class="px-4 py-4 bg-white border-b border-gray-200">
+            <h2 class="font-montserrat font-bold text-castor-brown text-lg mb-2">Confirm Product Information</h2>
+            <p class="text-gray-600">Please review and edit the product details below to ensure accuracy for scoring.</p>
+        </section>
+
+        <!-- Single Product Editor -->
+        <section id="single-product-editor" class="px-4 py-5 bg-white mb-4">
+            <div class="flex items-center mb-6">
+                <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5f6e60c0cd-63494a2b5012cff727a2.png" alt="maple syrup bottle product shot on white background, Canadian product, professional product photography" />
+                </div>
+                <div>
+                    <h3 class="font-montserrat font-bold text-lg text-castor-brown">Pure Maple Syrup</h3>
+                    <p class="text-gray-500 text-sm">Barcode: 628055012346</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label for="product-name" class="block mb-1 text-sm font-medium text-gray-700">Product Name</label>
+                    <TextInput id="product-name" value="Pure Maple Syrup" className="w-full border-gray-300 rounded-md" />
+                </div>
+                <div>
+                    <label for="brand-name" class="block mb-1 text-sm font-medium text-gray-700">Brand</label>
+                    <TextInput id="brand-name" value="Canadian Heritage" className="w-full border-gray-300 rounded-md" />
+                </div>
+                <div>
+                    <label for="category" class="block mb-1 text-sm font-medium text-gray-700">Category</label>
+                    <Select id="category" className="w-full border-gray-300 rounded-md">
+                        <Option>Food & Beverages</Option>
+                        <Option>Household Items</Option>
+                        <Option>Personal Care</Option>
+                        <Option>Electronics</Option>
+                        <Option>Clothing & Accessories</Option>
+                    </Select>
+                </div>
+                <div>
+                    <label for="subcategory" class="block mb-1 text-sm font-medium text-gray-700">Subcategory</label>
+                    <Select id="subcategory" className="w-full border-gray-300 rounded-md">
+                        <Option>Sweeteners</Option>
+                        <Option>Condiments</Option>
+                        <Option>Breakfast Items</Option>
+                        <Option>Baking Ingredients</Option>
+                    </Select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multiple Products Editor (Accordion Style) -->
+        <section id="multiple-products-editor" class="bg-white">
+            <Accordion>
+                <Accordion.Panel>
+                    <Accordion.Title className="flex items-center py-4 px-4 bg-white">
+                        <div class="w-10 h-10 rounded-lg overflow-hidden mr-3 flex-shrink-0">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a3d6ef0285-36038368e21492c250b2.png" alt="organic oats package, Canadian product, professional product photography" />
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-medium text-castor-brown">Organic Steel Cut Oats</h3>
+                            <p class="text-xs text-gray-500">Canadian Prairie Farms</p>
+                        </div>
+                    </Accordion.Title>
+                    <Accordion.Content>
+                        <div class="px-4 pb-4 space-y-4">
+                            <div>
+                                <label for="product-name-2" class="block mb-1 text-sm font-medium text-gray-700">Product Name</label>
+                                <TextInput id="product-name-2" value="Organic Steel Cut Oats" className="w-full border-gray-300 rounded-md" />
+                            </div>
+                            <div>
+                                <label for="brand-name-2" class="block mb-1 text-sm font-medium text-gray-700">Brand</label>
+                                <TextInput id="brand-name-2" value="Canadian Prairie Farms" className="w-full border-gray-300 rounded-md" />
+                            </div>
+                            <div>
+                                <label for="category-2" class="block mb-1 text-sm font-medium text-gray-700">Category</label>
+                                <Select id="category-2" className="w-full border-gray-300 rounded-md">
+                                    <Option>Food & Beverages</Option>
+                                    <Option>Household Items</Option>
+                                    <Option>Personal Care</Option>
+                                    <Option>Electronics</Option>
+                                </Select>
+                            </div>
+                        </div>
+                    </Accordion.Content>
+                </Accordion.Panel>
+                <Accordion.Panel>
+                    <Accordion.Title className="flex items-center py-4 px-4 bg-white">
+                        <div class="w-10 h-10 rounded-lg overflow-hidden mr-3 flex-shrink-0">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/868ad1e79c-c661c2190bf04a4ee2c1.png" alt="wild blueberry jam jar, Canadian product, professional product photography" />
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-medium text-castor-brown">Wild Blueberry Jam</h3>
+                            <p class="text-xs text-gray-500">Northern Harvest</p>
+                        </div>
+                    </Accordion.Title>
+                    <Accordion.Content>
+                        <div class="px-4 pb-4 space-y-4">
+                            <div>
+                                <label for="product-name-3" class="block mb-1 text-sm font-medium text-gray-700">Product Name</label>
+                                <TextInput id="product-name-3" value="Wild Blueberry Jam" className="w-full border-gray-300 rounded-md" />
+                            </div>
+                            <div>
+                                <label for="brand-name-3" class="block mb-1 text-sm font-medium text-gray-700">Brand</label>
+                                <TextInput id="brand-name-3" value="Northern Harvest" className="w-full border-gray-300 rounded-md" />
+                            </div>
+                            <div>
+                                <label for="category-3" class="block mb-1 text-sm font-medium text-gray-700">Category</label>
+                                <Select id="category-3" className="w-full border-gray-300 rounded-md">
+                                    <Option>Food & Beverages</Option>
+                                    <Option>Household Items</Option>
+                                    <Option>Personal Care</Option>
+                                    <Option>Electronics</Option>
+                                </Select>
+                            </div>
+                        </div>
+                    </Accordion.Content>
+                </Accordion.Panel>
+            </Accordion>
+        </section>
+
+        <!-- Add More Products Section -->
+        <section id="add-more-section" class="px-4 py-4 mt-4">
+            <Button variant="outline" className="w-full py-3 border border-castor-brown text-castor-brown rounded-md font-semibold flex items-center justify-center">
+                <i class="fa-solid fa-plus mr-2"></i> Add Another Product
+            </Button>
+        </section>
+
+        <!-- Information Card -->
+        <section id="info-card" class="px-4 mt-2">
+            <Card>
+                <div class="flex items-start">
+                    <div class="mr-3 text-shield-blue">
+                        <i class="fa-solid fa-circle-info text-xl"></i>
+                    </div>
+                    <div>
+                        <H5>Why is this important?</H5>
+                        <Paragraph>Accurate product information helps us determine Canadian-made products and calculate ethical scores more precisely.</Paragraph>
+                    </div>
+                </div>
+            </Card>
+        </section>
+    </main>
+
+    <!-- Fixed Bottom Action Bar -->
+    <div id="action-bar" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-10">
+        <Button variant="primary" className="w-full bg-maple-red hover:bg-maple-red/90 text-white py-3.5 rounded-md font-semibold uppercase font-montserrat">
+            Confirm & Score All
+        </Button>
+    </div>

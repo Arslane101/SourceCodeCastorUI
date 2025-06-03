@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Playlist+Script&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'castor-brown': '#6D4C41',
+              'maple-red': '#D80621',
+              'clean-white': '#FFFFFF',
+              'shield-blue': '#0032A0',
+              'forest-green': '#00573F',
+            },
+            fontFamily: {
+              'montserrat': ['Montserrat', 'sans-serif'],
+              'opensans': ['Open Sans', 'sans-serif'],
+              'playlist': ['Playlist Script', 'cursive'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+      .heritage-text {
+        font-family: 'Playlist Script', cursive;
+      }
+    </style>
+</head>
+
+    <!-- Header -->
+    <header id="header" class="bg-clean-white shadow-sm fixed top-0 left-0 right-0 z-10">
+        <div class="flex items-center justify-between px-4 py-3">
+            <div class="flex items-center">
+                <button class="mr-2 text-castor-brown">
+                    <i class="fa-solid fa-arrow-left text-xl"></i>
+                </button>
+                <h1 class="text-xl font-montserrat font-extrabold text-castor-brown">LOCAL ALTERNATIVES</h1>
+            </div>
+            <button class="text-castor-brown">
+                <i class="fa-solid fa-share-nodes text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Original Product Banner -->
+    <section id="original-product" class="mt-16 px-4 py-3 bg-white shadow-sm">
+        <div class="flex items-center">
+            <div class="w-16 h-16 rounded-lg overflow-hidden mr-3 flex-shrink-0">
+                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/2eb2cae780-df58bbbe94cbd324b52c.png" alt="Generic coffee product packaging, simple modern design" />
+            </div>
+            <div class="flex-1">
+                <h2 class="text-base font-montserrat font-bold text-castor-brown">Canadian Classic Coffee</h2>
+                <div class="flex items-center text-sm text-gray-600">
+                    <i class="fa-solid fa-globe mr-1 text-gray-400"></i>
+                    <span>Imported • 4,500 km away</span>
+                </div>
+                <div class="mt-1 flex items-center">
+                    <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="w-1/3 h-full bg-maple-red"></div>
+                    </div>
+                    <span class="ml-2 text-xs text-maple-red font-semibold">Low Impact</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section id="filter-section" class="sticky top-16 z-10 bg-clean-white shadow-sm">
+        <div class="px-4 py-3">
+            <div class="flex items-center justify-between mb-2">
+                <h3 class="text-sm font-semibold text-gray-700">12 Local Alternatives Found</h3>
+                <button class="flex items-center text-shield-blue text-sm font-semibold">
+                    <i class="fa-solid fa-sliders mr-1"></i> Filters
+                </button>
+            </div>
+            <div class="flex space-x-2 overflow-x-auto py-1 no-scrollbar">
+                <button id="filter-all" class="px-3 py-1.5 bg-castor-brown text-white text-sm rounded-full whitespace-nowrap">
+                    All
+                </button>
+                <button id="filter-locality" class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full whitespace-nowrap">
+                    Within 100 km
+                </button>
+                <button id="filter-price" class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full whitespace-nowrap">
+                    Similar Price
+                </button>
+                <button id="filter-impact" class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full whitespace-nowrap">
+                    High Impact
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Products List -->
+    <section id="alternatives-list" class="px-4 py-4">
+        <div class="space-y-4">
+            <!-- Alternative Product Card 1 -->
+            <div id="alternative-card-1" class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="relative">
+                    <img class="w-full h-40 object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/10dcc72758-1fdb5898c5ad6d672706.png" alt="Canadian artisanal coffee beans in eco-friendly packaging with local farm branding, natural lighting" />
+                    <div class="absolute top-2 right-2 bg-forest-green text-white text-xs px-2 py-1 rounded-full">
+                        High Impact
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-montserrat font-bold text-castor-brown">Northern Roasters</h3>
+                        <span class="text-lg font-semibold">$16.99</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mt-1">
+                        <i class="fa-solid fa-location-dot mr-1 text-forest-green"></i>
+                        <span>Local • 15 km away</span>
+                    </div>
+                    <div class="mt-2">
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Sustainability</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-5/6 h-full bg-forest-green"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Labor Practices</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-full h-full bg-forest-green"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Local Economy</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-5/6 h-full bg-forest-green"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex space-x-2">
+                        <button class="flex-1 py-2 bg-castor-brown text-white rounded-md text-sm font-semibold">View Details</button>
+                        <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-md">
+                            <i class="fa-solid fa-heart text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alternative Product Card 2 -->
+            <div id="alternative-card-2" class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="relative">
+                    <img class="w-full h-40 object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a4c66df00e-3260e6d8cedffe193060.png" alt="Small batch coffee roasting in a Canadian workshop, rustic packaging with maple leaf logo" />
+                    <div class="absolute top-2 right-2 bg-shield-blue text-white text-xs px-2 py-1 rounded-full">
+                        Medium Impact
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-montserrat font-bold text-castor-brown">Maple Valley Coffee</h3>
+                        <span class="text-lg font-semibold">$14.99</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mt-1">
+                        <i class="fa-solid fa-location-dot mr-1 text-shield-blue"></i>
+                        <span>Regional • 75 km away</span>
+                    </div>
+                    <div class="mt-2">
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Sustainability</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-2/3 h-full bg-shield-blue"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Labor Practices</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-5/6 h-full bg-shield-blue"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Local Economy</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-3/4 h-full bg-shield-blue"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex space-x-2">
+                        <button class="flex-1 py-2 bg-castor-brown text-white rounded-md text-sm font-semibold">View Details</button>
+                        <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-md">
+                            <i class="fa-solid fa-heart text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alternative Product Card 3 -->
+            <div id="alternative-card-3" class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="relative">
+                    <img class="w-full h-40 object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/aceb1cab74-910e96adb2ef068500d5.png" alt="Indigenous Canadian coffee cooperative, traditional design elements on packaging, sustainable farming imagery" />
+                    <div class="absolute top-2 right-2 bg-forest-green text-white text-xs px-2 py-1 rounded-full">
+                        High Impact
+                    </div>
+                    <div class="absolute top-2 left-2 bg-maple-red text-white text-xs px-2 py-1 rounded-full">
+                        Indigenous Owned
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-montserrat font-bold text-castor-brown">First Nations Brew</h3>
+                        <span class="text-lg font-semibold">$17.50</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mt-1">
+                        <i class="fa-solid fa-location-dot mr-1 text-forest-green"></i>
+                        <span>Local • 30 km away</span>
+                    </div>
+                    <div class="mt-2">
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Sustainability</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-full h-full bg-forest-green"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-1">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Labor Practices</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-5/6 h-full bg-forest-green"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-xs font-semibold text-gray-700 w-24">Local Economy</span>
+                            <div class="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="w-full h-full bg-forest-green"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3 flex space-x-2">
+                        <button class="flex-1 py-2 bg-castor-brown text-white rounded-md text-sm font-semibold">View Details</button>
+                        <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-md">
+                            <i class="fa-solid fa-heart text-maple-red"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Navigation Bar -->
+    <div id="footer" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+        <div class="flex justify-around items-center px-2 py-2">
+            <a href="#" class="flex flex-col items-center px-3 py-1">
+                <i class="fa-solid fa-house text-lg text-gray-500"></i>
+                <span class="text-xs mt-1 text-gray-500">Home</span>
+            </a>
+            <a href="#" class="flex flex-col items-center px-3 py-1">
+                <i class="fa-solid fa-barcode text-lg text-gray-500"></i>
+                <span class="text-xs mt-1 text-gray-500">Scan</span>
+            </a>
+            <div class="relative">
+                <button class="w-12 h-12 rounded-full bg-maple-red flex items-center justify-center text-white shadow-lg absolute -top-5 left-1/2 transform -translate-x-1/2">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+            </div>
+            <a href="#" class="flex flex-col items-center px-3 py-1">
+                <i class="fa-solid fa-heart text-lg text-castor-brown"></i>
+                <span class="text-xs mt-1 text-castor-brown">Saved</span>
+            </a>
+            <a href="#" class="flex flex-col items-center px-3 py-1">
+                <i class="fa-solid fa-user text-lg text-gray-500"></i>
+                <span class="text-xs mt-1 text-gray-500">Profile</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Filter Modal (Hidden by default) -->
+    <div id="filter-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-xl p-5">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-montserrat font-bold text-castor-brown">Filter Alternatives</h2>
+                <button class="text-gray-500">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-sm font-semibold mb-2">Distance</h3>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1.5 bg-castor-brown text-white text-sm rounded-full">Within 50 km</button>
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Within 100 km</button>
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Any</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold mb-2">Price Range</h3>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Lower</button>
+                        <button class="px-3 py-1.5 bg-castor-brown text-white text-sm rounded-full">Similar</button>
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Any</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold mb-2">Impact</h3>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Any</button>
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Medium+</button>
+                        <button class="px-3 py-1.5 bg-castor-brown text-white text-sm rounded-full">High Only</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold mb-2">Special Considerations</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-3 py-1.5 bg-castor-brown text-white text-sm rounded-full">Indigenous Owned</button>
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Women Owned</button>
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Certified Organic</button>
+                        <button class="px-3 py-1.5 bg-white border border-gray-300 text-gray-700 text-sm rounded-full">Fair Trade</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 flex space-x-3">
+                <button class="flex-1 py-3 border border-castor-brown text-castor-brown font-semibold rounded-md">Reset</button>
+                <button class="flex-1 py-3 bg-castor-brown text-white font-semibold rounded-md">Apply Filters</button>
+            </div>
+        </div>
+    </div>
