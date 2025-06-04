@@ -1,5 +1,19 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import SplashScreen from '@/components/splash/SplashScreen';
+import OnboardingCarousel from '@/components/onboarding/OnboardingCarousel';
 
 export default function Home() {
-  return <SplashScreen />;
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return showSplash ? <SplashScreen /> : <OnboardingCarousel />;
 }
