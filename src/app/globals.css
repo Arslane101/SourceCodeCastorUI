@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --castor-brown: #6D4C41;
+  --maple-red: #D80621;
+  --clean-white: #FFFFFF;
+  --shield-blue: #0032A0;
+  --forest-green: #00573F;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.heritage-text {
+  font-family: 'Playlist Script', cursive;
+}
